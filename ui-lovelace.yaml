@@ -4,8 +4,8 @@ views:
   - title: Livingroom
     icon: mdi:sofa
   - title: Bedroom
-    icon: mdi:bed
+    icon: mdi:hotel
   - title: Bathroom
     icon: mdi:shower-head
   - title: Kitchen
-    icon: mdi:kitchen
+    icon: mdi:fridge-outline
