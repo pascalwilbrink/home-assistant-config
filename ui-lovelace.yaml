@@ -1,6 +1,13 @@
+title: Home
 views:
   - title: Dashboard
     icon: mdi:view-dashboard
+    cards:
+      - card:
+          title: Agenda
+          type: entities
+          entities:
+            - entity: calendar.pascal_wilbrink_gmail_com
   - title: Livingroom
     icon: mdi:sofa
   - title: Bedroom
