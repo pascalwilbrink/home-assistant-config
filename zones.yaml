@@ -2,7 +2,7 @@
   latitude: !secret work_lat
   longitude: !secret work_lng
   radius: 250
-  icon: mdi:suitcase
+  icon: mdi:briefcase
 
 - name: Home
   latitude: !secret lat

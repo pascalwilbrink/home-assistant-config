@@ -1,0 +1,11 @@
+views:
+  - title: Dashboard
+    icon: mdi:view-dashboard
+  - title: Livingroom
+    icon: mdi:sofa
+  - title: Bedroom
+    icon: mdi:bed
+  - title: Bathroom
+    icon: mdi:shower-head
+  - title: Kitchen
+    icon: mdi:kitchen
