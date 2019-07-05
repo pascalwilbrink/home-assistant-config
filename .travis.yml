@@ -20,7 +20,8 @@ after_success:
 - git commit -m "Set build VERSION number" public/version
 - git tag $GIT_TAG -a -m "Generated tag from Travis CI build $TRAVIS_BUILD_NUMBER"
 - git push --quiet https://$GH_TOKEN@github.com/pascalwilbrink/home-assistant-config
-  $GIT_TAG > /dev/null 2>&1
+  $GIT_TAG
+
 env:
   global:
     secure: USJLqU6FO4h6oOAVgtxqeA/zLzeAsidETOQIBZYTcZ6eOXyaUh6VJZmJLgK8E8dkyWAthRZRwWNsH0WMCWXHknpE+eVWa3sACfRX3shRvaGJq82NXWRLC3yditfqKvIWZtvVx3lo3gAzN/iWG9PvTSk4IsFQMSLH8hJnbDokhmmknBung/61BS+nrPR3XYLU3Fl6CbFQWRHVw5mw+2VuDxDgoizgYOyW222S0p2+xEMICJ05iJM9v+BOqUhUTE9j3BzZ9misLZjb2j3Rqxj1FNTkwRmDNqbACGyi/iUBX2j09nTmE9wj3kWMPfnu0u/JI1yRG9j7Q6xU4ILT61hmOIbg6d0P3JFVqJ4KY6+TGsbe/UFBCU6b2B7L24DCLE12a/srn2Oe2eIcQIJ4L4kxxGdZogDwCBdygDc/qIvOpy2thn9xpOPittuA/ancputfR/NYE0rpIClYz0amTofICiSm1s23iimyj3CsNPKX62GoVz3ErHCDDXDpnW35Mrkg9qOwWXTS7okghh5YadJkAbFX9de843COkbMYDvUxmEAHOT6ndWAHPajwNMr5X2DQlGWlxFboZouMFPH2WLTY83SHIwCQfOgZvxPrFdBLm1y7eF5bgDPEq1SdTn7SHSpC2Op60LezzVCeURdzwqr+iBYIr9+jvP1IxqVyWZVHyl0=
