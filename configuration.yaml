@@ -11,7 +11,7 @@ homeassistant:
       trusted_networks:
         - !secret trusted_networks
     - type: homeassistant
-
+  customize: !include customizations.yaml
 # Hue
 hue:
   bridges:
