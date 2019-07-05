@@ -1,0 +1,58 @@
+homeassistant:
+  latitude: !secret lat
+  longitude: !secret lng
+  elevation: 430
+  unit_system: metric
+  time_zone: Europe/Amsterdam
+
+  auth_providers:
+    - type: trusted_networks
+      trusted_networks:
+        - !secret trusted_networks
+    - type: homeassistant
+
+# Hue
+hue:
+  bridges:
+    - host: !secret hue_bridge
+      allow_unreachable: true
+      allow_hue_groups: true
+
+# Telegram
+telegram_bot:
+    - platform: polling
+      api_key: !secret telegram_api
+      allowed_chat_ids:
+        - !secret telegram_chat_id
+# UI
+lovelace:
+  mode: yaml
+
+# API
+http:
+  trusted_networks:
+    - !secret trusted_networks
+  server_port: !secret port
+  base_url: !secret duckdns_url
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+
+# MQTT
+mqtt:
+  broker: !secret hassio_ip
+  port: !secret hassio_mqtt_port
+
+# Discovery
+discovery:
+
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+zone: !include zones.yaml

@@ -1,0 +1,28 @@
+# Extensions
+*.conf
+*.db
+*.db-journal
+*.txt
+*.sqlite
+*.xml
+*.log
+*.backup
+
+# Folders
+.cloud
+.storage
+www
+zones
+deps
+tmp
+__pycache__
+coverage
+tts
+
+# Files
+.HA_VERSION
+.spotify-token-cache
+
+# Secrets
+secrets.yaml
+

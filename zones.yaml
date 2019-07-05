@@ -1,0 +1,11 @@
+- name: Work
+  latitude: !secret work_lat
+  longitude: !secret work_lng
+  radius: 250
+  icon: mdi:worker
+
+- name: Home
+  latitude: !secret lat
+  longitude: !secret lng
+  radius: 100
+  icon: mdi:account
