@@ -1,0 +1,20 @@
+- cal_id: !secret google_calendar_pascal
+  entities:
+  - device_id: !secret google_calendar_pascal_device
+    ignore_availability: true
+    name: pascal.wilbrink@gmail.com
+    track: true
+
+- cal_id: !secret google_calendar_contacts
+  entities:
+  - device_id: !secret google_calendar_contacts_device
+    ignore_availability: true
+    name: Contacts
+    track: true
+
+- cal_id: nl.dutch#holiday@group.v.calendar.google.com
+  entities:
+  - device_id: feestdagen_in_nederland
+    ignore_availability: true
+    name: Feestdagen in Nederland
+    track: true
