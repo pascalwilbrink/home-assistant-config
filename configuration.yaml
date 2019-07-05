@@ -34,8 +34,8 @@ http:
     - !secret trusted_networks
   server_port: !secret port
   base_url: !secret duckdns_url
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
 
 # MQTT
 mqtt:
