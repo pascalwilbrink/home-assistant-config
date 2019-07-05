@@ -1,3 +1,4 @@
+# General
 homeassistant:
   latitude: !secret lat
   longitude: !secret lng
@@ -45,14 +46,24 @@ mqtt:
 # Discovery
 discovery:
 
+# Default config
 default_config:
 
 # Text to speech
 tts:
   - platform: google_translate
 
+# Groups
 group: !include groups.yaml
+
+# Automations
 automation: !include automations.yaml
+
+# Scripts
 script: !include scripts.yaml
 
+# Zones
 zone: !include zones.yaml
+
+# Sensors
+sensor: !include sensors.yaml

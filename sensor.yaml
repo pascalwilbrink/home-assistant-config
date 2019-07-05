@@ -1,0 +1,11 @@
+- platform: waze_travel_time
+  name: "Travel time to work"
+  origin: person.pascal_wilbrink
+  destination: zone.work
+  region: 'EU'
+
+- platform: waze_travel_time
+  name: "Travel time to home"
+  origin: person.pascal_wilbrink
+  destination: zone.home
+  region: 'EU'
