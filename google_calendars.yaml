@@ -2,7 +2,7 @@
   entities:
   - device_id: !secret google_calendar_pascal_device
     ignore_availability: true
-    name: pascal.wilbrink@gmail.com
+    name: Pascal
     track: true
 
 - cal_id: !secret google_calendar_contacts
