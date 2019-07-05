@@ -22,7 +22,8 @@ tts
 # Files
 .HA_VERSION
 .spotify-token-cache
-.google-token
+.google.token
+
 # Secrets
 secrets.yaml
 
