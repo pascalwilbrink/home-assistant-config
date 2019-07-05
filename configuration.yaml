@@ -25,6 +25,12 @@ telegram_bot:
       api_key: !secret telegram_api
       allowed_chat_ids:
         - !secret telegram_chat_id
+
+# Google
+google:
+  client_id: !secret google_client_id
+  client_secret: !secret google_client_secret
+
 # UI
 lovelace:
   mode: yaml
