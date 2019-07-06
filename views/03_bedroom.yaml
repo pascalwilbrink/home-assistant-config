@@ -1,10 +1,10 @@
-- title: Bedroom
-  icon: mdi:hotel
-  cards:
-    - type: custom:mini-media-player
-      entity: media_player.slaapkamer
-      icon: mdi:spotify
-      artwork: cover
-      hide:
-        source: true
-        power_state: false
+title: Bedroom
+icon: mdi:hotel
+cards:
+  - type: custom:mini-media-player
+    entity: media_player.slaapkamer
+    icon: mdi:spotify
+    artwork: cover
+    hide:
+      source: true
+      power_state: false

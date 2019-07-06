@@ -1,67 +1,67 @@
-- title: Dashboard
-  icon: mdi:view-dashboard
-  cards:
-    # Weather card
-  - type: weather-forecast
+title: Dashboard
+icon: mdi:view-dashboard
+cards:
+# Weather card
+- type: weather-forecast
 
-    # Batteries card
-  - type: entity-filter
-    entities: 
-    - sensor.mobile_battery
-    state_filter:
-    - "< 40"
-    - "30"
-    - "20"
-    - "10"
-    - "0"
-    show_empty: true
-    card:
-      type: glance
-      title: Low batteries
-      column_width: 50%
+  # Batteries card
+- type: entity-filter
+  entities: 
+  - sensor.mobile_battery
+  state_filter:
+  - "< 40"
+  - "30"
+  - "20"
+  - "10"
+  - "0"
+  show_empty: true
+  card:
+    type: glance
+    title: Low batteries
+    column_width: 50%
 
-    # TV card
-  - type: entities
-    entities:
-    - media_player.tv
+  # TV card
+- type: entities
+  entities:
+  - media_player.tv
 
-    # Calendar card
-  - type: custom:atomic-calendar
-    title: 'Agenda'
-    entities:
-    - calendar.pascal_wilbrink_gmail_com
-    - calendar.feestdagen_in_nederland
+  # Calendar card
+- type: custom:atomic-calendar
+  title: 'Agenda'
+  entities:
+  - calendar.pascal_wilbrink_gmail_com
+  - calendar.feestdagen_in_nederland
 
-    # Media player card
-  - type: entities
-    entities:
-    - type: custom:mini-media-player
-      entity: media_player.home
-      group: true
-      source: icon
-      info: short
-      hide:
-        volume: true
-        power: true
-    - type: custom:mini-media-player
-      entity: media_player.eetkamer
-      group: true
-      icon: mdi:speaker-wireless
-      hide:
-        controls: true
-        progress: true
-        info: true
-        icon: true
-    - type: custom:mini-media-player
-      entity: media_player.slaapkamer
-      group: true
-      icon: mdi:home
-      hide:
-        controls: true
-        progress: true
-        info: true
-        icon: true
-    - type: custom:mini-media-player
-      entity: media_player.55pos9002_12
-      hide:
-        controls: true
+  # Media player card
+- type: entities
+  entities:
+  - type: custom:mini-media-player
+    entity: media_player.home
+    group: true
+    source: icon
+    info: short
+    hide:
+      volume: true
+      power: true
+  - type: custom:mini-media-player
+    entity: media_player.eetkamer
+    group: true
+    icon: mdi:speaker-wireless
+    hide:
+      controls: true
+      progress: true
+      info: true
+      icon: true
+  - type: custom:mini-media-player
+    entity: media_player.slaapkamer
+    group: true
+    icon: mdi:home
+    hide:
+      controls: true
+      progress: true
+      info: true
+      icon: true
+  - type: custom:mini-media-player
+    entity: media_player.55pos9002_12
+    hide:
+      controls: true

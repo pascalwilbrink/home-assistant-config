@@ -10,8 +10,8 @@ resources:
 
 title: Home
 views:
-  !include views/01_dashboard.yaml
-  !include views/02_livingroom.yaml
-  !include views/03_bedroom.yaml
-  !include views/04_bathroom.yaml
-  !include views/05_kitchen.yaml
+  - !include views/01_dashboard.yaml
+  - !include views/02_livingroom.yaml
+  - !include views/03_bedroom.yaml
+  - !include views/04_bathroom.yaml
+  - !include views/05_kitchen.yaml
