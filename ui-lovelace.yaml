@@ -1,17 +1,93 @@
+resources:
+    - url: /local/cards/test-card.js
+      type: module
+    - url: /local/cards/spotify-card.js
+      type: module
+    - url: /local/cards/mini-media-player-bundle.js
+      type: module
+    - url: /local/cards/calendar-card.js
+      type: module
+
 title: Home
 views:
   - title: Dashboard
     icon: mdi:view-dashboard
     cards:
-      - card:
-          title: Agenda
-          type: entities
-          entities:
-            - entity: calendar.pascal_wilbrink_gmail_com
+      - type: entities
+        entities:
+          - media_player.tv
+
+      - type: custom:atomic-calendar
+        title: 'Agenda'
+        entities:
+          - calendar.pascal_wilbrink_gmail_com
+          - calendar.feestdagen_in_nederland
+
+      - type: entities
+        entities:
+          - type: custom:mini-media-player
+            entity: media_player.home
+            group: true
+            source: icon
+            info: short
+            hide:
+              volume: true
+              power: true
+
+          - type: custom:mini-media-player
+            entity: media_player.eetkamer
+            group: true
+            icon: mdi:speaker-wireless
+            hide:
+              controls: true
+              progress: true
+              info: true
+              icon: true
+              
+          - type: custom:mini-media-player
+            entity: media_player.slaapkamer
+            group: true
+            icon: mdi:home
+            hide:
+              controls: true
+              progress: true
+              info: true
+              icon: true
+              
+          - type: custom:mini-media-player
+            entity: media_player.55pos9002_12
+            hide:
+              controls: true
+
+      - type: 'custom:spotify-card'
+        client_id: !secret spotify_client
+        limit: 10
+     
   - title: Livingroom
     icon: mdi:sofa
+    cards:
+      - type: entity-button
+        entity: media_player.tv
+        
+      - type: custom:mini-media-player
+        entity: media_player.eetkamer
+        icon: mdi:spotify
+        artwork: cover
+        hide:
+          source: true
+          power_state: false
+          
   - title: Bedroom
     icon: mdi:hotel
+    cards:
+      - type: custom:mini-media-player
+        entity: media_player.slaapkamer
+        icon: mdi:spotify
+        artwork: cover
+        hide:
+          source: true
+          power_state: false
+    
   - title: Bathroom
     icon: mdi:shower-head
   - title: Kitchen
