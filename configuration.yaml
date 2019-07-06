@@ -33,14 +33,20 @@ google:
     client_id: !secret google_client_id
     client_secret: !secret google_client_secret
 
-# Tv
 media_player:
+
+    # TV
     - platform: philips_android_tv
       name: TV
       host: !secret philips_tv_host
       mac: !secret philips_tv_mac
       username: !secret philips_tv_username
       password: !secret philips_tv_password
+
+    # Spotify
+    - platform: spotify
+      client_id: !secret spotify_client
+      client_secret: !secret spotify_secret
 
 # UI
 lovelace:
