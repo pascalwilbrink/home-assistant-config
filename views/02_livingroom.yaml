@@ -1,0 +1,13 @@
+- title: Livingroom
+  icon: mdi:sofa
+  cards:
+    - type: entity-button
+      entity: media_player.tv
+      
+    - type: custom:mini-media-player
+      entity: media_player.eetkamer
+      icon: mdi:spotify
+      artwork: cover
+      hide:
+        source: true
+        power_state: false
