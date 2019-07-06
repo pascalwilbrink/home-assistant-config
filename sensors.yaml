@@ -19,5 +19,5 @@
       friendly_name: 'Phone battery'
       value_template: '{{ states.device_tracker.pascal_htcu12.attributes.battery_level }}'
       unit_of_measurement: '%'
-      entity_id: device_tracker.pascal_htcu12	
+      entity_id: device_tracker.pascal_htcu12
       device_class: battery

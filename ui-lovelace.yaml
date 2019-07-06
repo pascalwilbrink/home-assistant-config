@@ -13,6 +13,21 @@ views:
   - title: Dashboard
     icon: mdi:view-dashboard
     cards:
+      - type: entity-filter
+        entities: 
+         - sensor.mobile_battery
+        state_filter:
+          - "< 40"
+          - "30"
+          - "20"
+          - "10"
+          - "0"
+        show_empty: true
+        card:
+          type: glance
+          title: Low batteries
+          column_width: 50%
+
       - type: entities
         entities:
           - media_player.tv
