@@ -1,11 +1,23 @@
+# Travel time to work
 - platform: waze_travel_time
   name: "Travel time to work"
   origin: person.pascal_wilbrink
   destination: zone.work
   region: 'EU'
 
+# Travel time to home
 - platform: waze_travel_time
   name: "Travel time to home"
   origin: person.pascal_wilbrink
   destination: zone.home
   region: 'EU'
+
+# Mobile battery status
+- platform: template
+  sensors:
+    mobile_battery:
+      friendly_name: 'Phone battery'
+      value_template: '{{ states.device_tracker.pascal_htcu12.attributes.battery_level }}'
+      unit_of_measurement: '%'
+      entity_id: device_tracker.pascal_htcu12	
+      device_class: battery
