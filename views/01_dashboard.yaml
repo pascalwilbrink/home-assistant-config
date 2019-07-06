@@ -4,6 +4,22 @@
     # Weather card
   - type: weather-forecast
 
+    # Batteries card
+  - type: entity-filter
+    entities: 
+    - sensor.mobile_battery
+    state_filter:
+    - "< 40"
+    - "30"
+    - "20"
+    - "10"
+    - "0"
+    show_empty: true
+    card:
+      type: glance
+      title: Low batteries
+      column_width: 50%
+
     # TV card
   - type: entities
     entities:
