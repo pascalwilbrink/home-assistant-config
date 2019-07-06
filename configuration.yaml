@@ -33,6 +33,7 @@ google:
     client_id: !secret google_client_id
     client_secret: !secret google_client_secret
 
+# Media players
 media_player:
 
     # TV
@@ -47,6 +48,11 @@ media_player:
     - platform: spotify
       client_id: !secret spotify_client
       client_secret: !secret spotify_secret
+
+# Weather
+weather:
+  - platform: darksky
+    api_key: !secret darksky_key
 
 # UI
 lovelace:

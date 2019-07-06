@@ -3,6 +3,7 @@ icon: mdi:view-dashboard
 cards:
 # Weather card
 - type: weather-forecast
+  entity: weather.dark_sky
 
   # Batteries card
 - type: entity-filter
