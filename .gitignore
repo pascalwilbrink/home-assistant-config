@@ -11,7 +11,7 @@
 # Folders
 .cloud
 .storage
-www
+www/assets
 zones
 deps
 tmp
