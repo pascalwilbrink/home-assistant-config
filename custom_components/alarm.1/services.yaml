@@ -1,0 +1,11 @@
+set_value:
+  description: Sets the time of the alarm.
+  fields:
+    entity_id: {description: Entity id of the alarm to change., example: alarm.work}
+    hour: {description: Hour of the alarm to set., example: 6}
+    minute: {description: Minute of the alarm to set., example: 0}
+toggle:
+  description: Toggles the alarm on or off.
+  fields:
+    entity_id: {description: Entity id of the alarm to change., example: alarm.work}
+    enabled: {description: State of the alarm., example: true}
