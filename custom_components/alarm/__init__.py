@@ -189,11 +189,11 @@ class Alarm(RestoreEntity):
         current_hour = now.hour
         current_minute = now.minute
 
-        if not self._enabled or self._ringing:
-            return
 
-        if current_hour == self._hour and current_minute == self._minute:
+        if current_hour == self._hour and current_minute == self._minute and self._enabled:
             self._ringing = True
+        else: 
+            self._ringing = False
 
     async def async_toggle(self, enabled):
         enabled_value = bool(enabled)
