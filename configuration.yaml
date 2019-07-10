@@ -124,6 +124,8 @@ zone: !include zones.yaml
 # Sensors
 sensor: !include sensors.yaml
 
+# Binary sensors
+binary_sensor: !include binary_sensors.yaml
 
 rest_command:
   example_request:
@@ -133,8 +135,3 @@ rest_command:
     payload: '{"key": "{{ key }}" }'
     headers:
       authorization: !secret philips_tv_auth
-
-alarm:
-  work_alarm:
-    hour: 6
-    minute: 0

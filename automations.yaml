@@ -1,1 +1,13 @@
-[]
+- alias: 'Alarm'
+  trigger:
+  - platform: state
+    entity_id: alarm.work_alarm
+    to: 'on'
+  condition: []
+  action:
+  - service: tts.google_say
+    entity_id: media_player.eetkamer
+    data:
+      entity_id: media_player.eetkamer
+      language: nl
+      message: "Hallo, dit is een test"

@@ -1,7 +1,7 @@
 {
     "domain": "alarm",
     "name": "Alarm",
-    "documentation": "https://www.home-assistant.io/components/input_boolean",
+    "documentation": "",
     "requirements": [],
     "dependencies": [],
     "codeowners": [
