@@ -1,11 +1,30 @@
 title: Dashboard
 icon: mdi:view-dashboard
 cards:
+
+# Location card
+- type: glance
+  title: Locations
+  entities:
+    - entity: person.pascal_wilbrink
+      name: Pascal
+
 # Weather card
 - type: weather-forecast
   entity: weather.dark_sky
+  
+# Batteries card
+- type: custom:low-batteries-card
+  title: Low batteries
+  entities:
+    - sensor.mobile_battery
+  below: 40
+  
+# Shopping list
+- type: shopping-list
+  title: To do
 
-  # Batteries card
+# Batteries card
 - type: entity-filter
   entities: 
   - sensor.mobile_battery
@@ -21,19 +40,19 @@ cards:
     title: Low batteries
     column_width: 50%
 
-  # TV card
+# TV card
 - type: entities
   entities:
   - media_player.tv
 
-  # Calendar card
+# Calendar card
 - type: custom:atomic-calendar
   title: 'Agenda'
   entities:
   - calendar.pascal_wilbrink_gmail_com
   - calendar.feestdagen_in_nederland
 
-  # Media player card
+# Media player card
 - type: entities
   entities:
   - type: custom:mini-media-player

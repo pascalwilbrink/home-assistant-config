@@ -1,11 +1,11 @@
 resources:
-    - url: /local/cards/test-card.js
-      type: module
     - url: /local/cards/spotify-card.js
       type: module
     - url: /local/cards/mini-media-player-bundle.js
       type: module
     - url: /local/cards/calendar-card.js
+      type: module
+    - url: /local/cards/low-batteries-card.js
       type: module
 
 title: Home

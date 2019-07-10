@@ -8,3 +8,6 @@ cards:
     hide:
       source: true
       power_state: false
+  - type: light
+    entity: light.slaapkamer
+    name: Licht

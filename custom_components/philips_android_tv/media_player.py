@@ -1,4 +1,5 @@
 """Philips TV"""
+
 import homeassistant.helpers.config_validation as cv
 import json
 import logging
@@ -6,19 +7,23 @@ import time
 import voluptuous as vol
 
 from datetime import timedelta
+
 from homeassistant.components.media_player import (
     MediaPlayerDevice, PLATFORM_SCHEMA
 )
+
 from homeassistant.components.media_player.const import (
     SUPPORT_STOP, SUPPORT_PLAY, SUPPORT_NEXT_TRACK, SUPPORT_PAUSE,
     SUPPORT_PREVIOUS_TRACK, SUPPORT_VOLUME_SET, SUPPORT_TURN_OFF,
     SUPPORT_TURN_ON, SUPPORT_VOLUME_MUTE, SUPPORT_VOLUME_STEP,
     SUPPORT_SELECT_SOURCE
 )
+
 from homeassistant.const import (
     CONF_HOST, CONF_MAC, CONF_NAME, CONF_USERNAME, CONF_PASSWORD, STATE_OFF,
     STATE_ON, STATE_IDLE, STATE_UNKNOWN, STATE_PLAYING, STATE_PAUSED
 )
+
 from homeassistant.util import Throttle
 from requests import Session
 from requests.auth import HTTPDigestAuth
@@ -27,6 +32,7 @@ from requests.exceptions import RequestException
 
 # Workaround to suppress warnings about SSL certificates in Home Assistant log
 import urllib3
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 _LOGGER = logging.getLogger(__name__)
@@ -212,6 +218,9 @@ class PhilipsTV(MediaPlayerDevice):
         else:
             self._tv.send_key('Rewind')
 
+    def send_key(self, key):
+        self._tv.send_key(key)
+        
     @property
     def source(self):
         """Return the current input source."""
@@ -337,6 +346,7 @@ class PhilipsTVBase(object):
                 auth=HTTPDigestAuth(self._user, self._password),
                 timeout=TIMEOUT)
             self.api_online = True
+            _LOGGER.info('req headers: %s',resp.request.headers)
             if resp.status_code == 200:
                 return True
             else:
