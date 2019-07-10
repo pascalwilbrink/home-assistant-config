@@ -49,14 +49,35 @@ media_player:
       client_id: !secret spotify_client
       client_secret: !secret spotify_secret
 
+# Owntracks
+owntracks:
+  max_gps_accuracy: 200
+  waypoints: true
+  mqtt_topic: "owntracks/#"
+  events_only: false
+  
+# Device tracker
+device_tracker:
+  - platform: mqtt
+    devices:
+      pascal_htcu12:
+        'owntracks/htcu12/u1'
+
 # Weather
 weather:
   - platform: darksky
     api_key: !secret darksky_key
 
+# Shopping list
+shopping_list:
+
 # UI
 lovelace:
     mode: yaml
+
+# Frontend
+frontend:
+  themes: !include themes.yaml
 
 # API
 http:
@@ -71,6 +92,8 @@ http:
 mqtt:
     broker: !secret hassio_ip
     port: !secret hassio_mqtt_port
+    username: !secret mqtt_username
+    password: !secret mqtt_password
 
 # Discovery
 discovery:
@@ -100,3 +123,20 @@ zone: !include zones.yaml
 
 # Sensors
 sensor: !include sensors.yaml
+
+
+rest_command:
+  example_request:
+    url: !secret philips_tv_host_key
+    method: POST
+    verify_ssl: false
+    payload: '{"key": "{{ key }}" }'
+    headers:
+      authorization: !secret philips_tv_auth
+
+alarm:
+  work_alarm:
+    hour: 6
+    minute: 0
+
+    

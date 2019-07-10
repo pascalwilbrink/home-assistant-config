@@ -1,6 +1,60 @@
 title: Livingroom
 icon: mdi:sofa
 cards:
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: entity-button
+            entity: media_player.tv
+            icon: mdi:power
+            show_name: false
+            tap_action:
+              action: call-service
+              service: media_player.toggle
+              service_data:
+                entity_id: media_player.tv
+                
+          - type: entity-button
+            entity: media_player.tv
+            icon: mdi:chevron-left
+            show_name: false
+            tap_action:
+              action: call-service
+              service: rest_command.example_request
+              service_data:
+                key: CursorLeft
+                
+          - type: entity-button
+            entity: media_player.tv
+            icon: mdi:chevron-right
+            show_name: false
+            tap_action:
+              action: call-service
+              service: rest_command.example_request
+              service_data:
+                key: CursorRight
+                
+          - type: entity-button
+            entity: media_player.tv
+            icon: mdi:chevron-up
+            show_name: false
+            tap_action:
+              action: call-service
+              service: rest_command.example_request
+              service_data:
+                key: CursorUp
+                
+          - type: entity-button
+            entity: media_player.tv
+            icon: mdi:chevron-down
+            show_name: false
+            tap_action:
+              action: call-service
+              service: rest_command.example_request
+              service_data:
+                key: CursorDown
+                
   - type: entity-button
     entity: media_player.tv
     
@@ -11,3 +65,7 @@ cards:
     hide:
       source: true
       power_state: false
+
+  - type: light
+    entity: light.woonkamer
+    name: Light
