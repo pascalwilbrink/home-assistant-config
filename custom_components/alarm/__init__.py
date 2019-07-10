@@ -158,6 +158,10 @@ class Alarm(RestoreEntity):
         return self._ringing
 
     @property
+    def is_on(self):
+        return self._ringing
+
+    @property
     def state_attributes(self):
         """Return the state attributes."""
         return {
