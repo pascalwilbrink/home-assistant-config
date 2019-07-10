@@ -103,7 +103,7 @@ async def async_setup(hass, config):
     if not entities:
         return False
 
-    async def àsync_set_value_service(entity, call):
+    async def async_set_value_service(entity, call):
         """Handle set value call to the Alarm service."""
         hour = call.data.get(ATTR_HOUR)
         minute = call.data.get(ATTR_MINUTE)
@@ -152,10 +152,6 @@ class Alarm(RestoreEntity):
     @property
     def icon(self):
         return self._icon
-
-    @property
-    def state(self):
-        return self._ringing
 
     @property
     def is_on(self):
