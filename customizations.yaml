@@ -1,4 +1,5 @@
 person.pascal_wilbrink:
-  entity_picture: /local/assets/profile.jpeg
+  entity_picture: /local/assets/profile.png
 device_tracker.pascal_htcu12:
-  entity_picture: /local/assets/profile.jpeg
+  entity_picture: /local/assets/profile.png
+

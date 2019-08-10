@@ -11,7 +11,7 @@ dark-primary-color: '#2980b9'
 light-primary-color: '#2980b9'
 
 # Text colors
-primary-text-color: '#FFFFFF'
+primary-text-color: '#BEBEBE'
 text-primary-color: 'var(--primary-text-color)'
 secondary-text-color: '#b58e31'
 disabled-text-color: '#777777'
@@ -29,7 +29,7 @@ table-row-alternative-background-color: '#292929'
 
 # Nav Menu
 paper-listbox-color: '#777777'
-paper-listbox-background-color: '#141414'
+paper-listbox-background-color: '#2A2A2A'
 paper-grey-50: 'var(--primary-text-color)'
 paper-grey-200: '#222222'
 
@@ -98,3 +98,5 @@ lumo-shade-20pct: 'rgba(34, 34, 34, .2)'
 lumo-shade-10pct: 'rgba(34, 34, 34, .1)'
 lumo-shade-5pct: 'rgba(34, 34, 34, .05)'
 lumo-tint-5pct: '#222222'
+
+iron-icon-fill-color: '#FFFFFF'

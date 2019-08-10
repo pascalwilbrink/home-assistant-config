@@ -11,3 +11,34 @@
       entity_id: media_player.eetkamer
       language: nl
       message: "Hallo, dit is een test"
+
+- alias: 'Turn on livingroom lights when door opens'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.door_livingroom
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: sun.sun
+    state: 'below_horizon'
+  action:
+  - service: homeassistant.turn_on
+    entity_id: light.woonkamer
+    
+- alias: 'Turn off lights when daylight'
+  trigger:
+  - platform: state
+    entity_id: sun.sun
+    to: 'above_horizon'
+  action:
+  - service: homeassistant.turn_off
+    entity_id: group.all_lights
+
+- alias: 'Turn off lights when away'
+  trigger:
+  - platform: state
+    entity_id: person.pascal_wilbrink
+    to: 'not_home'
+  action:
+  - service: homeassistant.turn_off
+    entity_id: group.all_lights

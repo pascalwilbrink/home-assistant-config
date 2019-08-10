@@ -16,17 +16,17 @@ homeassistant:
 
 # Hue
 hue:
-  bridges:
-    - host: !secret hue_bridge
-      allow_unreachable: true
-      allow_hue_groups: true
+ bridges:
+   - host: !secret hue_bridge
+     allow_unreachable: true
+     allow_hue_groups: true
 
 # Telegram
-telegram_bot:
-    - platform: polling
-      api_key: !secret telegram_api
-      allowed_chat_ids:
-        - !secret telegram_chat_id
+#telegram_bot:
+ #   - platform: polling
+  #    api_key: !secret telegram_api
+   #   allowed_chat_ids:
+    #    - !secret telegram_chat_id
 
 # Google
 google:
@@ -37,17 +37,19 @@ google:
 media_player:
 
     # TV
-    - platform: philips_android_tv
-      name: TV
-      host: !secret philips_tv_host
-      mac: !secret philips_tv_mac
-      username: !secret philips_tv_username
-      password: !secret philips_tv_password
+   - platform: philips_android_tv
+     name: TV
+     host: !secret philips_tv_host
+     mac: !secret philips_tv_mac
+     username: !secret philips_tv_username
+     password: !secret philips_tv_password
 
     # Spotify
-    - platform: spotify
-      client_id: !secret spotify_client
-      client_secret: !secret spotify_secret
+   - platform: spotify
+     client_id: !secret spotify_client
+     client_secret: !secret spotify_secret
+    # Plex
+   - platform: plex
 
 # Owntracks
 owntracks:
@@ -88,12 +90,12 @@ http:
     ssl_certificate: !secret ssl_certificate
     ssl_key: !secret ssl_key
 
-# MQTT
+#MQTT
 mqtt:
-    broker: !secret hassio_ip
-    port: !secret hassio_mqtt_port
-    username: !secret mqtt_username
-    password: !secret mqtt_password
+   broker: !secret hassio_ip
+   port: !secret hassio_mqtt_port
+   username: !secret mqtt_username
+   password: !secret mqtt_password
 
 # Discovery
 discovery:
@@ -126,12 +128,3 @@ sensor: !include sensors.yaml
 
 # Binary sensors
 binary_sensor: !include binary_sensors.yaml
-
-rest_command:
-  example_request:
-    url: !secret philips_tv_host_key
-    method: POST
-    verify_ssl: false
-    payload: '{"key": "{{ key }}" }'
-    headers:
-      authorization: !secret philips_tv_auth
